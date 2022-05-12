@@ -13,10 +13,10 @@ export default function Navigation() {
 
   return (
     <nav>
-      <NavLink to="/get-started">Get Started</NavLink>
-      <NavLink to="/classmaker">Classmaker</NavLink>
+      <NavLink to='/get-started'>Get Started</NavLink>
+      <NavLink to='/classmaker'>Classmaker</NavLink>
       {state?.isLoggedIn && (
-        <button type="button" onClick={handleLogout}>
+        <button type='button' onClick={handleLogout}>
           Sign Out
         </button>
       )}

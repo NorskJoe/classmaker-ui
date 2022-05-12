@@ -34,18 +34,18 @@ export default function Login() {
   }
 
   return (
-    <div className="TODO_Login">
+    <div className='TODO_Login'>
       <form onSubmit={handleSubmit(handleLogin)}>
         <input
-          type="text"
-          placeholder="Username"
+          type='text'
+          placeholder='Username'
           {...register('username', { required: true })}
         ></input>
         {/* TODO: Add error wrapper */}
         {errors.username && 'Username is required'}
         <input
-          type="password"
-          placeholder="Password"
+          type='password'
+          placeholder='Password'
           {...register('password', { required: true })}
         ></input>
         {/* TODO: Add error wrapper */}

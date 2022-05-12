@@ -13,7 +13,7 @@ export default function App() {
       <Routes>
         <Route index element={<Login></Login>} />
         <Route
-          path="get-started"
+          path='get-started'
           element={
             <ProtectedRoute>
               <GetStarted />
@@ -21,14 +21,14 @@ export default function App() {
           }
         />
         <Route
-          path="classmaker"
+          path='classmaker'
           element={
             <ProtectedRoute>
               <Classmaker />
             </ProtectedRoute>
           }
         />
-        <Route path="*" element={<div>404</div>} />
+        <Route path='*' element={<div>404</div>} />
       </Routes>
     </AuthProvider>
   );

@@ -10,7 +10,7 @@ export default function ProtectedRoute({
   const { state } = useAuth();
 
   if (!state?.isLoggedIn) {
-    return <Navigate to="/" replace />;
+    return <Navigate to='/' replace />;
   }
 
   return <>{children}</>;
