@@ -1,3 +1,4 @@
+import { Alert, Button, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../components/authProvider';
@@ -24,6 +25,7 @@ export default function Login() {
     username: string;
     password: string;
   }): Promise<void> {
+    // Validation
     await userService.login(username, password).then((token) => {
       setState({
         token: token,
@@ -34,24 +36,38 @@ export default function Login() {
   }
 
   return (
-    <div className='TODO_Login'>
-      <form onSubmit={handleSubmit(handleLogin)}>
-        <input
-          type='text'
-          placeholder='Username'
-          {...register('username', { required: true })}
-        ></input>
-        {/* TODO: Add error wrapper */}
-        {errors.username && 'Username is required'}
-        <input
-          type='password'
-          placeholder='Password'
-          {...register('password', { required: true })}
-        ></input>
-        {/* TODO: Add error wrapper */}
-        {errors.password && 'Password is required'}
-        <button>Submit</button>
-      </form>
+    <div className="TODO_Login">
+      <h1>Welcome to Classmaker</h1>
+      <Alert variant="primary">
+        To sign up, send an email to joe.johnson3909@gmail.com
+      </Alert>
+      <Form noValidate onSubmit={handleSubmit(handleLogin)}>
+        <Form.Group className="mb-3">
+          <Form.Control
+            type="text"
+            placeholder="Username"
+            {...register('username', { required: true })}
+            isInvalid={!!errors.username}
+          ></Form.Control>
+          <Form.Control.Feedback type="invalid">
+            Username is required
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Control
+            type="password"
+            placeholder="Password"
+            {...register('password', { required: true })}
+            isInvalid={!!errors.password}
+          ></Form.Control>
+          <Form.Control.Feedback type="invalid">
+            Password is required
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
     </div>
   );
 }

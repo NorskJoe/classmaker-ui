@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useAuth } from './authProvider';
 
-export default function Navigation() {
+export default function Header() {
   const { state, setState } = useAuth();
 
   function handleLogout() {
@@ -11,12 +11,17 @@ export default function Navigation() {
     });
   }
 
+  // Do not display if not logged in
+  if (!state?.isLoggedIn) {
+    return <></>;
+  }
+
   return (
     <nav>
-      <NavLink to='/get-started'>Get Started</NavLink>
-      <NavLink to='/classmaker'>Classmaker</NavLink>
+      <NavLink to="/get-started">Get Started</NavLink>
+      <button>Upload</button>
       {state?.isLoggedIn && (
-        <button type='button' onClick={handleLogout}>
+        <button type="button" onClick={handleLogout}>
           Sign Out
         </button>
       )}

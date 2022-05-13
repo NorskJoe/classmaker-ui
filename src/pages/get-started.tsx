@@ -5,7 +5,7 @@ export default function GetStarted() {
   return (
     <>
       <h2>Get Started</h2>
-      <div>Token: {state?.token}</div>
+      <div>TODO: Instructions on how to use the app</div>
     </>
   );
 }
