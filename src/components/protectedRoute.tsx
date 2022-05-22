@@ -8,10 +8,10 @@ export default function ProtectedRoute({
   children: React.ReactNode;
 }) {
   const { state } = useAuth();
-
-  if (!state?.isLoggedIn) {
-    return <Navigate to='/' replace />;
-  }
+  console.log(state?.isLoggedIn);
+  // if (!state?.isLoggedIn) {
+  //   return <Navigate to='/' replace />;
+  // }
 
   return <>{children}</>;
 }

@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import { useAuth } from './authProvider';
 
 export default function Header() {
@@ -17,14 +17,19 @@ export default function Header() {
   }
 
   return (
-    <nav>
-      <NavLink to="/get-started">Get Started</NavLink>
-      <button>Upload</button>
-      {state?.isLoggedIn && (
-        <button type="button" onClick={handleLogout}>
-          Sign Out
-        </button>
-      )}
-    </nav>
+    <div>
+      <Button variant="outline-info" type="button">
+        <img
+          src="/icons/question-square.svg"
+          alt="icon"
+          height="18px"
+          width="18px"
+        />
+        How To
+      </Button>
+      <Button variant="secondary" type="button" onClick={handleLogout}>
+        Sign Out
+      </Button>
+    </div>
   );
 }

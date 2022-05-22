@@ -1,23 +1,19 @@
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../components/authProvider';
-
 export default function Home() {
-  const { state } = useAuth();
-  const navigate = useNavigate();
-
-  const hasData = false;
-  /* TODO: Check if classes exist
+  /* TODO: Call API to check if classes exist
    * if (exist) { render classes }
    * else { render getting started }
    */
+  const hasData = false;
   if (!hasData) {
-    navigate('/get-started');
+    /* TODO: Alert that you need to upload data first
+     * OR
+     * TODO: Placeholders with an upload button
+     */
   }
 
   return (
     <>
-      <h2>Classmaker</h2>
-      <div>Token: {state?.token}</div>
+      <h2>Home</h2>
     </>
   );
 }

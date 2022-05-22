@@ -31,12 +31,12 @@ export default function Login() {
         token: token,
         isLoggedIn: true,
       });
-      navigate('/classmaker');
+      navigate('/home');
     });
   }
 
   return (
-    <div className="TODO_Login">
+    <div>
       <h1>Welcome to Classmaker</h1>
       <Alert variant="primary">
         To sign up, send an email to joe.johnson3909@gmail.com
